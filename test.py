@@ -16,7 +16,9 @@ counter = 0
 
 labels = ["A", "B", "C", "D", "E", "F"]
 
-while True:
+# while True:
+i=0
+while i<5000000000:
     success, img = cap.read()
     imgOutput = img.copy()
     hands, img = detector.findHands(img)
@@ -58,6 +60,6 @@ while True:
 
         cv2.imshow("ImageCrop", imgCrop)
         cv2.imshow("ImageWhite", imgWhite)
-
+    i+=1
     cv2.imshow("Image", imgOutput)
     cv2.waitKey(1)
